@@ -15,13 +15,14 @@ def parseKeyword(keywork):
     # 中杠 分隔
     keywork = keywork.replace("-", " ")
     # 首字母大写分隔
-    k = ""
-    for index in range(len(keywork)):
-        char = keywork[index]
-        if char.isupper():
-            k = k + ' '
-        k = k + char
-    keywork = k
+    if keywork.isupper() == False:
+        k = ""
+        for index in range(len(keywork)):
+            char = keywork[index]
+            if char.isupper():
+                k = k + ' '
+            k = k + char
+        keywork = k
 
     # 空格分隔
     argv = keywork.split()
@@ -130,5 +131,4 @@ def outResult(keyword):
 
 
 if __name__ == '__main__':
-    outResult(
-        "AbcDeFGhiijdfKBdre-gfg-hfh-dfd- er-er  -ere_vd-ser-_fb_dggergrxhdtgh-gh-fg-h-hf")
+    outResult("IS_EXTERNAL")
